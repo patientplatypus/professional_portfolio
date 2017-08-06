@@ -38,6 +38,7 @@ import Articlebox from './Articlebox';
 import {Motion, spring} from 'react-motion';
 import Articleframe from './Articleframe';
 import './main.css';
+// import '../../../../../.env';
 
 const FirstGraph = () => {
   const codeString =
@@ -678,7 +679,7 @@ class BlogOne extends Component{
 
         console.log('inside stocksearchfunc');
 
-        var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+this.state.stocksearchsent+'&apikey=OAO5GXY4IMRLFLII';
+        var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol='+this.state.stocksearchsent+'&apikey='+process.env.alphavantagekey;
 
         axios.get(searchurl)
         .then(response=>{
@@ -730,7 +731,8 @@ class BlogOne extends Component{
         })
 
       // https://www.alphavantage.co/query?function=SECTOR&apikey=demo
-        var searchurl = 'https://www.alphavantage.co/query?function=SECTOR&apikey=OAO5GXY4IMRLFLII';
+
+        var searchurl = 'https://www.alphavantage.co/query?function=SECTOR&apikey='+process.env.alphavantage;
         axios.get(searchurl)
         .then(response=>{
           console.log('here is the sector response ', response);
@@ -787,7 +789,7 @@ class BlogOne extends Component{
     console.log('exchange status is ', this.state.exchangestatus);
     if(exchangestatus==="exchangeopen"){
       console.log('inside exchange open');
-      var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol='+this.state.stocksearchsent+'&interval=1min&outputsize=full&apikey=OAO5GXY4IMRLFLII';
+      var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol='+this.state.stocksearchsent+'&interval=1min&outputsize=full&apikey='+process.env.alphavantagekey;
 
       axios.get(searchurl)
       .then(response=>{
@@ -875,7 +877,7 @@ class BlogOne extends Component{
         console.log('catch from alphavantage is ', err);
       })
     }else{
-      var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AMZN&interval=1min&apikey=OAO5GXY4IMRLFLII';
+      var searchurl = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AMZN&interval=1min&apikey='+process.env.alphavantagekey;
       axios.get(searchurl)
       .then(response=>{
         // console.log('return from exchangeclosed is ', response.data["Time Series (1min)"]);

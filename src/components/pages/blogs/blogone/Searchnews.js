@@ -175,7 +175,6 @@ class Searchnews extends Component{
   searchnews(e){
 
     var self = this;
-
     this.setState(
       {
         newsboxshow: false,
@@ -184,23 +183,23 @@ class Searchnews extends Component{
     )
 
     if (e.target.getAttribute('data-name')==="Bloomberg"){
-      var searchurl = "https://newsapi.org/v1/articles?source=bloomberg&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=bloomberg&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="Business Insider"){
-      var searchurl = "https://newsapi.org/v1/articles?source=business-insider&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=business-insider&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="Financial Times"){
-      var searchurl = "https://newsapi.org/v1/articles?source=financial-times&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=financial-times&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="Reuters"){
-      var searchurl = "https://newsapi.org/v1/articles?source=reuters&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=reuters&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="The Economist"){
-      var searchurl = "https://newsapi.org/v1/articles?source=the-economist&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=the-economist&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="The Wall Street Journal"){
-      var searchurl = "https://newsapi.org/v1/articles?source=the-wall-street-journal&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7"
+      var searchurl = "https://newsapi.org/v1/articles?source=the-wall-street-journal&sortBy=top&apiKey="+process.env.newsapikey
     }else if(e.target.getAttribute('data-name')==="BBC"){
-      var searchurl = 'https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7'
-    }else if(e.target.getAttribute('data-name')==="CNBC"){
-      var searchurl = 'https://newsapi.org/v1/articles?source=cnbc&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7'
-    }else if(e.target.getAttribute('data-name')==="Fortune"){
-      var searchurl = 'https://newsapi.org/v1/articles?source=fortune&sortBy=top&apiKey=e9831e28210946afb679f014ed18e5c7'
+      var searchurl = "https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey="+process.env.newsapikey
+    }else if(e.target.getAttribute("data-name")==="CNBC"){
+      var searchurl = "https://newsapi.org/v1/articles?source=cnbc&sortBy=top&apiKey="+process.env.newsapikey
+    }else if(e.target.getAttribute("data-name")==="Fortune"){
+      var searchurl = "https://newsapi.org/v1/articles?source=fortune&sortBy=top&apiKey="+process.env.newsapikey
     }
 
 

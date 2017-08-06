@@ -2,6 +2,7 @@
 const path = require('path')
 require("babel-core/register");
 require("babel-polyfill");
+const Dotenv = require('dotenv-webpack');
 // require('velocity-animate');
 // require('velocity-animate/velocity.ui');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -91,8 +92,16 @@ const config = createConfig([
   defineConstants({
     'process.env.NODE_ENV': process.env.NODE_ENV,
     'process.env.PUBLIC_PATH': publicPath.replace(/\/$/, ''),
+    'process.env.alphavantagekey': 'OAO5GXY4IMRLFLII',
+  }),
+  defineConstants({
+    'process.env.newsapikey': 'e9831e28210946afb679f014ed18e5c7',
   }),
   addPlugins([
+    new Dotenv({
+     path: './.env', // Path to .env file (this is the default)
+     safe: true // load .env.example (defaults to "false" which does not use dotenv-safe)
+    }),
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -119,6 +128,10 @@ const config = createConfig([
     }),
     sourceMaps(),
     addPlugins([
+      new Dotenv({
+       path: './.env', // Path to .env file (this is the default)
+       safe: true // load .env.example (defaults to "false" which does not use dotenv-safe)
+      }),
       new webpack.NamedModulesPlugin(),
     ]),
   ]),
@@ -126,6 +139,10 @@ const config = createConfig([
   env('production', [
     splitVendor(),
     addPlugins([
+      new Dotenv({
+       path: './.env', // Path to .env file (this is the default)
+       safe: true // load .env.example (defaults to "false" which does not use dotenv-safe)
+      }),
       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     ]),
   ]),

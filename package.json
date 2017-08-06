@@ -74,6 +74,8 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "d3": "^4.10.0",
+    "dotenv": "^4.0.0",
+    "dotenv-webpack": "^1.5.4",
     "glamor": "^2.20.37",
     "glamorous": "^3.24.0",
     "history": "^4.6.3",
