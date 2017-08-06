@@ -1647,6 +1647,27 @@ class BlogOne extends Component{
               </TalkyBox>
             </AlignContainer>
           </Flex1>
+          <br/>
+          <Flex1>
+            <AlignContainer>
+              <TalkyBox size={`${50}px`} className="TalkyBox">
+                <p>
+                  Github
+                </p>
+              </TalkyBox>
+            </AlignContainer>
+          </Flex1>
+          <br/>
+          <Flex1>
+            <AlignContainer>
+              <TalkyBox size={`${25}px`} className="TalkyBox">
+                <p>
+                  &#8195;You can see the source code for this project on Github  <SpanLink onClick={()=>{this.sendlocation('https://github.com/patientplatypus/professional_portfolio/tree/master/src/components/pages/blogs/blogone')}}>here</SpanLink> or you can see the source code for this entire site <SpanLink onClick={()=>{this.sendlocation('https://github.com/patientplatypus/professional_portfolio')}}>here</SpanLink>.
+                </p>
+              </TalkyBox>
+            </AlignContainer>
+          </Flex1>
+          <br/>
         </FlexColumn>
         <br/><br/><br/><br/><br/><br/>
         </OverlapContainer>
