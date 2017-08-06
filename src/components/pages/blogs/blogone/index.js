@@ -444,8 +444,8 @@ const styles = {
     maxWidth: '100%',
   },
   navigationmargin: {
-    marginBottom: '25px',
-    height: '80px',
+    marginBottom: '0px',
+    height: '75px',
     width: '100%',
     backgroundColor: 'transparent'
   }

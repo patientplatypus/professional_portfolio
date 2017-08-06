@@ -10,4 +10,4 @@ Index.js is where most of the action takes place including the declaration and u
 
 ## Check it Out!
 
-This project is currently live on my blog. Feel free to check it out at http://www.q8z8p.com/blogone for a working demonstration!
+This project is currently live on my blog. Feel free to check it out at http://www.q8z8p.com/ for a working demonstration!
