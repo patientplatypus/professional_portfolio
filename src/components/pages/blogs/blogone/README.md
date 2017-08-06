@@ -7,3 +7,7 @@ This is an API that is a bit of a revamped Google Finance - it makes the colors 
 ## Overview
 
 Index.js is where most of the action takes place including the declaration and use of the VictoryCharts components. I call searchnews.js to search for news item, and searchstocks.js to search for stocks. Articlebox.js container contains the list of the articles that are pulled up after a search, and Articleframe.js contains the actual iframe of any article that is clicked on. I have a few files that are marked DEPRECATED - these were investigations into other charting libraries that I then decided not to use. They are kept here so that I can find and reference them later if I decide that they might work well in another project.
+
+## Check it Out!
+
+This project is currently live on my blog. Feel free to check it out at http://www.q8z8p.com/blogone for a working demonstration!
