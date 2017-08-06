@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine|Roboto+Slab');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');*/
+
+.navbarfixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 23px;
+  z-index: 2;
+}
+
+.svgflag:hover {
+  cursor: "pointer"
+}
+
+.comicsvg {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: "30px";
+  fill: 'red';
+}
+
+.blogtitlefont{
+  font-family: 'Cousine', monospace;
+}
+
+.TalkyBox {
+  font-family: 'Roboto Slab', serif;
+}

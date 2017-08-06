@@ -1,0 +1,12 @@
+.hidecursor{
+  border: none;
+  color: transparent;
+  display: inline-block;
+  font-size: 2em;
+  text-shadow: 0 0 0 gray;
+  width: 2em;
+
+  &:focus {
+      outline: none;
+  }
+}

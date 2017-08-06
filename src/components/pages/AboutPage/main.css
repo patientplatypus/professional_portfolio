@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Ubuntu|Lobster');
+/*font-family: 'Ubuntu', sans-serif;*/
+/*font-family: 'Anton', sans-serif;*/
+
+/*//dark gray #393E41
+//light gray #D3D0CB
+//off white #E7E5DF*/
+
+.header{
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subheader{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.navbarfixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
+}
+
+.picturedescription{
+  margin-right: 10px;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.imgheader{
+  font-family: 'Lobster', cursive;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #D3D0CB;
+  opacity: 0.8;
+  width: 100%;
+  text-align: center;
+}
+
+.socialpointer:hover{
+  cursor: pointer;
+}
+
+.imgheader:hover{
+  background-color: #393E41;
+  color: #E7E5DF;
+  cursor: pointer;
+}
+
+.imgheader:active{
+  background-color: tomato;
+  color: white;
+}
