@@ -732,7 +732,7 @@ class BlogOne extends Component{
 
       // https://www.alphavantage.co/query?function=SECTOR&apikey=demo
 
-        var searchurl = 'https://www.alphavantage.co/query?function=SECTOR&apikey='+process.env.alphavantage;
+        var searchurl = 'https://www.alphavantage.co/query?function=SECTOR&apikey='+process.env.alphavantagekey;
         axios.get(searchurl)
         .then(response=>{
           console.log('here is the sector response ', response);
