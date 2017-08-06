@@ -443,6 +443,12 @@ const styles = {
     maxHeight: '100%',
     maxWidth: '100%',
   },
+  navigationmargin: {
+    marginBottom: '25px',
+    height: '80px',
+    width: '100%',
+    backgroundColor: 'transparent'
+  }
 }
 
 const SpanLink = glamorous.span(
@@ -993,9 +999,15 @@ class BlogOne extends Component{
     })
   }
 
-  componentDidMount(){
+  componentWillUnmount(){
+    document.body.style.overflow='visible';
+  }
+
+  componentWillMount(){
+    console.log('^^^^^^componentWillMountFIRED^^^^^^');
     document.body.style.overflow='hidden';
   }
+
 
   sendlocation(sendto){
     window.location.href = sendto;
@@ -1114,7 +1126,7 @@ class BlogOne extends Component{
     return (
       <OutermostDiv>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <br/><br/><br/><br/>
+        <div style={styles.navigationmargin} />
         <OverlapContainer>
         <FlexColumn>
           <Flex1>
