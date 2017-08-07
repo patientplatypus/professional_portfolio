@@ -444,8 +444,10 @@ const styles = {
     maxWidth: '100%',
   },
   navigationmargin: {
-    marginBottom: '0px',
-    height: '75px',
+    marginBottom: '75px',
+    position: 'absolute',
+    top: 0,
+    height: '0px',
     width: '100%',
     backgroundColor: 'transparent'
   }
@@ -484,7 +486,9 @@ const ChartContainer = glamorous.div(
 
 const OutermostDiv = glamorous.div(
   {
-    maxHeight: '100vh'
+    maxHeight: '100vh',
+    position: 'relative',
+    marginTop: '75px'
   }
 )
 
@@ -593,7 +597,7 @@ class BlogOne extends Component{
       showgraphs: false,
       newspublishedat: [],
       flagkeyclicked: -1,
-      nottradingnow: false
+      nottradingnow: true,
     }
   }
 
@@ -812,7 +816,6 @@ class BlogOne extends Component{
           var oneMinClose = [];
           var oneMinTableClose = [];
           var oneMinVol = [];
-          var nottradingnow = false;
 
           // build the index
           for (var x in oneMinData) {
@@ -827,12 +830,20 @@ class BlogOne extends Component{
               var tradetime = new Date(oneMinDates[x]).getTime()
               var todaytime = Date.now();
 
+
+
               if (moment(tradetime).format('MMMM/DD/YY')===moment(todaytime).format('MMMM/DD/YY')){
-                oneMinTableClose.push({x: x, uv: parseFloat(oneMinData[oneMinDates[x]]['4. close']), time: new Date(oneMinDates[x]).getTime()})
-              }else{
-                oneMinTableClose.push({x:x,uv:x,time:x})
-                nottradingnow = true;
+                oneMinTableClose.push({x: x, uv: parseFloat(oneMinData[oneMinDates[x]]['4. close']), time: new Date(oneMinDates[x]).getTime()});
+                this.setState({
+                  nottradingnow: false
+                })
               }
+              // console.log('***************');
+              // console.log('moment(tradetime).format("MMMM/DD/YY")', moment(tradetime).format('MMMM/DD/YY'));
+              // console.log("=moment(todaytime).format('MMMM/DD/YY')", moment(todaytime).format('MMMM/DD/YY'));
+              // console.log('nottradingnow is ', this.state.nottradingnow);
+              // console.log('***************');
+
 
               // oneMinTableClose.push({"x": x, "y": oneMinData[oneMinDates[x]]['4. close'], "d": oneMinDates[x]})
               if (x === oneMinDates.length-1){
@@ -868,11 +879,6 @@ class BlogOne extends Component{
                     exchangestatus: setexchangestatus
                   }
                 )
-                if (nottradingnow = true){
-                  this.setState({
-                    nottradingnow: true
-                  })
-                }
               })
             }
           });
@@ -1126,7 +1132,7 @@ class BlogOne extends Component{
     return (
       <OutermostDiv>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <div style={styles.navigationmargin} />
+        <div style={styles.navigationmargin}/>
         <OverlapContainer>
         <FlexColumn>
           <Flex1>

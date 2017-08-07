@@ -15,6 +15,7 @@ import {
 const styles = {
   contentcontainer: {
     position: 'absolute',
+    height: '110vh',
     zIndex: "-1",
     width: '100%',
     minHeight: '95vh',
@@ -102,14 +103,17 @@ class BlogPage extends Component{
     return (
       <div>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <br/><br/><br/><br/>
-        <AlignContainer style={styles.contentcontainer}>
-          <BlogButton onClick={(e)=>{this.blogfunc(e)}}>
-            <p>
-              Blog 1
-            </p>
-          </BlogButton>
-        </AlignContainer>
+        <br/><br/>
+        <div style={styles.contentcontainer}>
+          <AlignContainer>
+            <br/><br/><br/><br/>
+            <BlogButton onClick={(e)=>{this.blogfunc(e)}}>
+              <p>
+                Blog 1
+              </p>
+            </BlogButton>
+          </AlignContainer>
+        </div>
       </div>
     )
   }

@@ -130,7 +130,7 @@ const styles = {
   },
   pagecontainer:{
     minHeight:"94vh",
-    height: '100%',
+    height: '110vh',
     background: "#232526",  /* fallback for old browsers */
     background: "-webkit-linear-gradient(to bottom, #414345, #232526)", /* Chrome 10-25, Safari 5.1-6 */
     background: "linear-gradient(to bottom, #414345, #232526)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -183,7 +183,7 @@ class MessagePage extends Component{
       <div>
         <AlignContainer>
           <PrimaryNavigationGlam/>
-          <br/><br/><br/><br/>
+          <br/><br/>
           <FlexColumn style={styles.pagecontainer}>
             <Flex1>
               <Callout>

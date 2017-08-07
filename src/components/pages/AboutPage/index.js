@@ -311,9 +311,9 @@ const ColumnContainer = glamorous.div(
   {
     flexDirection:'column',
     flexWrap:'wrap',
+    height: '110vh',
     // justifyContent: 'flex-start',
     width:'100%',
-    height:'100%'
   }
 )
 
@@ -465,11 +465,12 @@ class AboutPage extends Component{
     return (
       <div>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <br/><br/><br/><br/>
+        <br/><br/>
         <AlignContainer style={styles.contentcontainer}>
           <ColumnContainer>
             <PageItems>
               <AlignContainer>
+                <br/>
                 <FlexRow className="subheader">
                   <WelcomeSplash>
                     Welcome to my About Page!
