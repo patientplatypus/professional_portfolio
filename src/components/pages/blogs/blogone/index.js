@@ -834,9 +834,11 @@ class BlogOne extends Component{
 
               if (moment(tradetime).format('MMMM/DD/YY')===moment(todaytime).format('MMMM/DD/YY')){
                 oneMinTableClose.push({x: x, uv: parseFloat(oneMinData[oneMinDates[x]]['4. close']), time: new Date(oneMinDates[x]).getTime()});
-                this.setState({
-                  nottradingnow: false
-                })
+                if (this.state.nottradingnow===true){
+                  this.setState({
+                    nottradingnow: false
+                  })
+                }
               }
               // console.log('***************');
               // console.log('moment(tradetime).format("MMMM/DD/YY")', moment(tradetime).format('MMMM/DD/YY'));
