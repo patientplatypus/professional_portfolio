@@ -6,6 +6,8 @@ import { HomePage, MessagePage, AboutPage, BlogPage, ProjectsPage } from 'compon
 // https://github.com/diegohaz/arc/wiki/Styling
 import theme from './themes/default'
 import BlogOne from './pages/blogs/blogone'
+import BlogTwo from './pages/blogs/blogtwo'
+
 
 import createHistory from 'history/createBrowserHistory'
 
@@ -30,6 +32,7 @@ const App = () => {
           <Route path="/message" component={MessagePage} exact />
           <Route path="/projects" component={ProjectsPage} exact />
           <Route path="/blogone" component={BlogOne} exact />
+          <Route path="/blogtwo" component={BlogTwo} exact />
           <Route path="/blog" component={BlogPage} exact />
         </div>
       </Router>

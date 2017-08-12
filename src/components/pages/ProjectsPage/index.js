@@ -300,7 +300,7 @@ class ProjectsPage extends Component{
     return (
       <div>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <br/><br/>
+        <br/><br/><br/><br/>
         <AlignContainer style={styles.contentcontainer}>
           <FlexColumn>
             <Flex1/>

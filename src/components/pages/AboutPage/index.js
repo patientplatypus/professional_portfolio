@@ -465,7 +465,7 @@ class AboutPage extends Component{
     return (
       <div>
         <PrimaryNavigationGlam className="navbarfixed"/>
-        <br/><br/>
+        <br/><br/><br/><br/>
         <AlignContainer style={styles.contentcontainer}>
           <ColumnContainer>
             <PageItems>

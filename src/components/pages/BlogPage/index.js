@@ -88,13 +88,22 @@ class BlogPage extends Component{
     super(props);
   }
 
-  blogfunc(e){
+  blogfunc1(e){
     e.preventDefault();
     var self = this;
     self.props.history.push({
         pathname: '/blogone',
         state: {
+        }
+    })
+  }
 
+  blogfunc2(e){
+    e.preventDefault();
+    var self = this;
+    self.props.history.push({
+        pathname: '/blogtwo',
+        state: {
         }
     })
   }
@@ -107,9 +116,18 @@ class BlogPage extends Component{
         <div style={styles.contentcontainer}>
           <AlignContainer>
             <br/><br/><br/><br/>
-            <BlogButton onClick={(e)=>{this.blogfunc(e)}}>
+            <BlogButton onClick={(e)=>{this.blogfunc1(e)}}>
               <p>
                 Blog 1
+              </p>
+            </BlogButton>
+          </AlignContainer>
+          <br/>
+          <AlignContainer>
+            <br/><br/><br/><br/>
+            <BlogButton onClick={(e)=>{this.blogfunc2(e)}}>
+              <p>
+                Blog 2
               </p>
             </BlogButton>
           </AlignContainer>

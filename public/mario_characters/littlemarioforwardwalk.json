@@ -1,0 +1,39 @@
+{"frames": {
+
+"mario_characters1_46.png":
+{
+	"frame": {"x":0,"y":0,"w":12,"h":15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":15},
+	"sourceSize": {"w":12,"h":15},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mario_characters1_47.png":
+{
+	"frame": {"x":12,"y":0,"w":11,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":16},
+	"sourceSize": {"w":11,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"mario_characters1_48.png":
+{
+	"frame": {"x":23,"y":0,"w":15,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":16},
+	"sourceSize": {"w":15,"h":16},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "littlemarioforwardwalk.png",
+	"format": "RGBA8888",
+	"size": {"w":38,"h":16},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:ae9c1a55b9f5884f4a4c0182ea720ca9:80c341baf7877296bb8143f4c51a5998:383ea93646790c53db2201f0624e779e$"
+}
+}
