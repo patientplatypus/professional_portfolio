@@ -11,11 +11,11 @@ import {
   Switch,
   withRouter
 } from 'react-router-dom';
-// var ReactPIXI = require('react-pixi');
+
+import * as PIXI from 'pixi.js';
 import a from './a.png';
 import littlemarioforwardwalkpng from '../../../../../public/mario_characters/littlemarioforwardwalk.png';
 import littlemarioforwardwalkjson from '../../../../../public/mario_characters/littlemarioforwardwalk.json';
-var PIXI = require('pixi.js');
 
 const styles = {
   contentcontainer: {
@@ -119,25 +119,25 @@ class BlogTwo extends Component{
     this.stage.width = 400;
     this.stage.height = 400;
 
-    console.log(littlemarioforwardwalkjson)
-
-    PIXI.loader
-        .add(littlemarioforwardwalkpng, littlemarioforwardwalkjson)
-        .load(()=>this.spriteLoaded());
-
+    this.spriteLoaded();
   }
 
   spriteLoaded(){
-    console.log('yolo');
-    var frames = [];
-    var index = 0;
-    console.log('hello there sailor');
-    console.log(PIXI.utils.TextureCache)
-    for (var i = 0; i < 3; i++) {
-          index = i+46;
-          var texture = PIXI.Texture.fromFrame("mario_characters1_"+index+".png");
-          marioTextures.push(texture);
-     }
+    var baseTexture = PIXI.BaseTexture.fromImage(littlemarioforwardwalkpng);
+    var spritesheet = new PIXI.Spritesheet(baseTexture, littlemarioforwardwalkjson);
+
+    spritesheet.parse(() => {
+      console.log(spritesheet.textures);
+      var textures = Object.keys(spritesheet.textures).map((t) => spritesheet.textures[t]);
+
+      console.log(textures);
+      var animatedSprite = new PIXI.extras.AnimatedSprite(textures);
+
+      animatedSprite.animationSpeed = 0.25;
+      animatedSprite.play();
+      this.stage.addChild(animatedSprite);
+      this.animate();
+    });
   }
 
   drawwalls(){
