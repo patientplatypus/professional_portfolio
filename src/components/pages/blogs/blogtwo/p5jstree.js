@@ -233,35 +233,25 @@ class P5Wrapper extends Component {
         function drawellipse(ourtree, right, left, previousx, previousy, rightorleft){
           var currentx = 500+(700/(1.2*(ourtree.depth+1))*(right-left))
           var currenty = 100+50*(right+left)
+          if (previousx!=null){
+            console.log('value of currentx, currenty FOR LINE', currentx, " ", currenty, " ", previousx, " ", previousy);
+            p.line(currentx, currenty, previousx, previousy);
+          }
           if (previousx === null){
             currentx = 500
             currenty = 100
-            p.textSize(32);
-            p.fill(0, 102, 153, 51);
-            p.text(ourtree.data, currentx-40, currenty-40);
-            p.fill(0, 255, 255, 127);
           }else{
             if (rightorleft === 'right'){
+              // console.log('inside right if');
               currentx = previousx + 50 + (300/ourtree.depth+1)
               currenty = previousy + 50
-              p.textSize(32);
-              p.fill(0, 102, 153, 51);
-              p.text(ourtree.data, currentx-40, currenty-40);
-              p.fill(0, 255, 255, 127);
-              p.strokeWeight(10);
-              p.line(currentx, currenty, previousx, previousy);
-              p.strokeWeight(1)
+              console.log('value of currentx, currenty FOR CIRCLE', currentx, " ", currenty);
             }
             if (rightorleft === 'left'){
+              // console.log('inside left if');
+              console.log('value of currentx, currenty FOR CIRCLE', currentx, " ", currenty);
               currentx = previousx - 50 - (300/ourtree.depth+1)
               currenty = previousy + 50
-              p.textSize(32);
-              p.fill(0, 102, 153, 51);
-              p.text(ourtree.data, currentx-40, currenty-40);
-              p.fill(0, 255, 255, 127);
-              p.strokeWeight(10);
-              p.line(currentx, currenty, previousx, previousy);
-              p.strokeWeight(1);
             }
           }
           p.ellipse(currentx, currenty, 50 , 50)

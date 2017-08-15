@@ -13,9 +13,10 @@ import {
 } from 'react-router-dom';
 // var ReactPIXI = require('react-pixi');
 import a from './a.png';
-import littlemarioforwardwalkpng from '../../../../../public/mario_characters/sprites.png';
-import littlemarioforwardwalkjson from '../../../../../public/mario_characters/shoeboxtrial.json';
-var PIXI = require('pixi.js');
+import * as PIXI from 'pixi.js';
+import littlemarioforwardwalkpng from '../../../../../public/mario_characters/littlemarioforwardwalk.png';
+import littlemarioforwardwalkjson from '../../../../../public/mario_characters/littlemarioforwardwalk.json';
+
 
 const styles = {
   contentcontainer: {
@@ -113,21 +114,31 @@ class BlogTwo extends Component{
   }
 
   componentDidMount(){
+
     this.renderer = PIXI.autoDetectRenderer(1366, 768);
     this.refs.gameCanvas.appendChild(this.renderer.view);
     this.stage = new PIXI.Container();
     this.stage.width = 400;
     this.stage.height = 400;
 
-    console.log(littlemarioforwardwalkjson)
+    var baseTexture = PIXI.BaseTexture.fromImage(littlemarioforwardwalkpng);
+    var spritesheet = new PIXI.Spritesheet(baseTexture, littlemarioforwardwalkjson);
 
-    PIXI.loader
-        .add(littlemarioforwardwalkpng, littlemarioforwardwalkjson)
-        .load(()=>this.spriteLoaded());
-
-    // console.log(PIXI.utils.TextureCache);
-
+    spritesheet.parse(() => {
+      var textures = Object.keys(spritesheet.textures).map((t) => spritesheet.textures[t]);
+      var animatedSprite = new PIXI.extras.AnimatedSprite(textures);
+      animatedSprite.animationSpeed = 0.25;
+      animatedSprite.play();
+      this.stage.addChild(animatedSprite);
+      this.animate();
+    });
   }
+
+  animate() {
+    requestAnimationFrame(animate);
+    this.renderer.render(this.stage);
+  }
+
 
   spriteLoaded(){
     console.log('yolo');
@@ -136,8 +147,14 @@ class BlogTwo extends Component{
     console.log('hello there sailor');
     console.log(PIXI.utils.TextureCache)
     for (var i = 0; i < 3; i++) {
-          index = i+46;
-          var texture = PIXI.loader.resources[]
+          if (i === 0){
+            index = i+15;
+          }else{
+            index = i+16;
+          }
+          // var texture = PIXI.Texture.fromFrame("mario_characters1_"+index+".png");
+          const textures = PIXI.loader.resources[mariobigwalkforwardpng].textures;
+          textures["mario_characters1_"+index+".png"];
           marioTextures.push(texture);
      }
   }

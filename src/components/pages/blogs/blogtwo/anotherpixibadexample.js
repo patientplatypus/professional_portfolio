@@ -13,8 +13,8 @@ import {
 } from 'react-router-dom';
 // var ReactPIXI = require('react-pixi');
 import a from './a.png';
-import littlemarioforwardwalkpng from '../../../../../public/mario_characters/sprites.png';
-import littlemarioforwardwalkjson from '../../../../../public/mario_characters/shoeboxtrial.json';
+import littlemarioforwardwalkpng from '../../../../../public/mario_characters/littlemarioforwardwalk.png';
+import littlemarioforwardwalkjson from '../../../../../public/mario_characters/littlemarioforwardwalk.json';
 var PIXI = require('pixi.js');
 
 const styles = {
@@ -119,27 +119,41 @@ class BlogTwo extends Component{
     this.stage.width = 400;
     this.stage.height = 400;
 
-    console.log(littlemarioforwardwalkjson)
+    // mario_characters1_46.png
 
     PIXI.loader
-        .add(littlemarioforwardwalkpng, littlemarioforwardwalkjson)
+        .add([
+          {
+            name: 'a',
+            url: littlemarioforwardwalkjson
+          }
+        ])
         .load(()=>this.spriteLoaded());
-
-    // console.log(PIXI.utils.TextureCache);
 
   }
 
   spriteLoaded(){
-    console.log('yolo');
+    // console.log('yolo');
+    // const a = new PIXI.Sprite(PIXI.loader.resources.a.texture);
+    // this.stage.addChild(a)
+    // this.renderer.render(this.stage);
+
     var frames = [];
-    var index = 0;
-    console.log('hello there sailor');
-    console.log(PIXI.utils.TextureCache)
-    for (var i = 0; i < 3; i++) {
-          index = i+46;
-          var texture = PIXI.loader.resources[]
-          marioTextures.push(texture);
-     }
+
+    for (var i = 0; i < 4; i++) {
+       // magically works since the spritesheet was loaded with the pixi loader
+      //  frames.push(PIXI.Texture.fromFrame('mario_characters1_4' + (i+6) + '.png'));
+
+       const textures = PIXI.loader.resources[littlemarioforwardwalkjson].textures;
+       frames.push(textures['mario_characters1_4' + (i+6) + '.png']);
+    }
+    anim.x = 0;
+    anim.y = 0;
+    anim.anchor.set(0.5);
+    anim.animationSpeed = 0.5;
+    anim.play();
+    this.stage.addChild(anim)
+    this.renderer.render(this.stage);
   }
 
   drawwalls(){

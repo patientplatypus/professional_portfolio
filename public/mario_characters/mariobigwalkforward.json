@@ -1,0 +1,44 @@
+{"frames": {
+
+"mario_characters1_15.png":
+{
+	"frame": {"x":0,"y":0,"w":16,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
+	"sourceSize": {"w":16,"h":32}
+},
+"mario_characters1_17.png":
+{
+	"frame": {"x":16,"y":0,"w":16,"h":30},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":30},
+	"sourceSize": {"w":16,"h":30}
+},
+"mario_characters1_18.png":
+{
+	"frame": {"x":32,"y":0,"w":14,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":31},
+	"sourceSize": {"w":14,"h":31}
+},
+"mario_characters1_19.png":
+{
+	"frame": {"x":46,"y":0,"w":16,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
+	"sourceSize": {"w":16,"h":32}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "mariobigwalkforward.png",
+	"format": "RGBA8888",
+	"size": {"w":62,"h":32},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e0795d8a105bfe06dafbcb3602742480:98d2ed04ddc12ab33d4602130b5eaf93:0c4b2d86c5e75391f35d587cb27f196b$"
+}
+}

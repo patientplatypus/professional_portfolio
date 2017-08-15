@@ -13,8 +13,8 @@ import {
 } from 'react-router-dom';
 // var ReactPIXI = require('react-pixi');
 import a from './a.png';
-import littlemarioforwardwalkpng from '../../../../../public/mario_characters/sprites.png';
-import littlemarioforwardwalkjson from '../../../../../public/mario_characters/shoeboxtrial.json';
+import mariobigwalkforwardpng from '../../../../../public/mario_characters/sprites.png';
+import mariobigwalkforwardjson from '../../../../../public/mario_characters/shoeboxtrial.json';
 var PIXI = require('pixi.js');
 
 const styles = {
@@ -119,13 +119,43 @@ class BlogTwo extends Component{
     this.stage.width = 400;
     this.stage.height = 400;
 
-    console.log(littlemarioforwardwalkjson)
+    console.log()
 
     PIXI.loader
-        .add(littlemarioforwardwalkpng, littlemarioforwardwalkjson)
-        .load(()=>this.spriteLoaded());
+       .add('img/pictures/avatar/dhrgedrh.json')
+       .load(onAssetsLoaded);
 
-    // console.log(PIXI.utils.TextureCache);
+       function onAssetsLoaded()
+        {
+            // create an array of textures from an image path
+            var frames = [];
+            var index = 0;
+            for (var i = 0; i < 4; i++) {
+                if (i === 0){
+                  index = i+15;
+                }else{
+                  index = i+16;
+                }
+
+                // magically works since the spritesheet was loaded with the pixi loader
+                frames.push(PIXI.Texture.fromFrame("mario_characters1_"+index+".png"));
+            }
+
+            // create an AnimatedSprite (brings back memories from the days of Flash, right ?)
+            var anim = new PIXI.extras.AnimatedSprite(frames);
+
+            /*
+            * An AnimatedSprite inherits all the properties of a PIXI sprite
+            * so you can change its position, its anchor, mask it, etc
+            */
+            anim.x = 0;
+            anim.y = 0;
+            anim.anchor.set(0.5);
+            anim.animationSpeed = 0.5;
+            anim.play();
+
+            this.stage.addChild(anim)// CRASH
+    }
 
   }
 
@@ -136,8 +166,14 @@ class BlogTwo extends Component{
     console.log('hello there sailor');
     console.log(PIXI.utils.TextureCache)
     for (var i = 0; i < 3; i++) {
-          index = i+46;
-          var texture = PIXI.loader.resources[]
+          if (i === 0){
+            index = i+15;
+          }else{
+            index = i+16;
+          }
+          // var texture = PIXI.Texture.fromFrame("mario_characters1_"+index+".png");
+          const textures = PIXI.loader.resources[mariobigwalkforwardpng].textures;
+          textures["mario_characters1_"+index+".png"];
           marioTextures.push(texture);
      }
   }
