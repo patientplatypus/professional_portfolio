@@ -11,18 +11,27 @@ My previous blog had personally fun and interesting, but I wanted a cleaner and 
 ## Features
 
 Overall clean appearance with consistent color palette.
+
 SPA (Single Page Application) with top bar navigation.
+
 Home Page has links to social media and popup for email.
+
 Home Page has animation popin/popout for resume.
+
 About Page has "Kodak" picture modal on timer with arrows (arrows animated).
+
 Projects Page has slider overlay for each picture/project.
+
 Blog page has 2 blogs (one in development); Algorithms Blog (small) and Google Refinance (big).
+
 Contact Page emails directly.
 
 ## Technologies Used
 
 React w/React Router
+
 Flexbox
+
 Several Animation Libraries (Velocity, React-Motion, Processing.js)
 
 ## Action Shots
